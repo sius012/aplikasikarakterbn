@@ -19,6 +19,9 @@ Route::get('/', function () {
 })->name("welcome");
 
 Route::group(["middleware" => "auth"], function () {
+    Route::view('laporan_harian', 'laporan_asrama.laporan_harian');
+
+    Route::view('test_saja','testing.mytest');
     Route::get('/dashboard', [SuperAppController::class, "dashboard"])->name("dashboard");
 
     Route::get('/datasiswa', [SuperAppController::class, "datasiswa"])->name('datasiswa');
