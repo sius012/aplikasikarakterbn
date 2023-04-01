@@ -87,7 +87,7 @@ Route::group(["middleware" => "auth"], function () {
 
     Route::get("/profil", [SuperAppController::class,"profil"])->name("profil");
     Route::post("/profil/storejadwal", [SuperAppController::class,"storejadwal"])->name("profil.storejadwal");
-    Route::post("/profil/lihatjadwal", [SuperAppController::class,"lihatjadwal"])->name("profil.lihatjadwal");
+    Route::post("/profil/lihatjadwal", [SuperAppController::class,"lihatjadwal"])->name("profil.storejadwal");
 });
 
 Route::get('/injectsiswa', [SuperAppController::class, "injectsiswa"]);

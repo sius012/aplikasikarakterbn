@@ -107,7 +107,7 @@
                         <tr>
                             <th>Minggu</th>
                             <th>Keterangan</th>
-                            <th>Aksi</th>
+                            <th>Tahun</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -117,8 +117,7 @@
                         @endphp
                         <tr>
                             <td>{{$rentang["dari"]}} - {{$rentang["sampai"]}}</td>
-                            <td>{{$jk->keterangan}}</td>
-                            <td><a href="{{route('profil.lihatjadwal', ['id'=>$jk->id_jk])}}"><button class="btn bg-gradient-info px-3 py-2"><i class="fa fa-info"></i></button></a></td>
+                            <td>{{$jk}}</td>
                         </tr>
                         @endforeach
                     </tbody>
