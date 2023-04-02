@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::group(["middleware" => "auth"], function () {
     Route::view('laporan_harian', 'laporan_asrama.laporan_harian');
 
+    Route::view('postingan','laporan_asrama.postingan');
+
     Route::view('test_saja','testing.mytest');
     Route::get('/dashboard', [SuperAppController::class, "dashboard"])->name("dashboard");
 
