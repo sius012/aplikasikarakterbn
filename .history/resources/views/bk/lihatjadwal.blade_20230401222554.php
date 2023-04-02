@@ -1,0 +1,42 @@
+@extends('layouts.master')
+@section('content')
+    <div class="card">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            @foreach($jadwalkonseling["detail"] as $i=> $jk)
+                                <td>{{$i}}</td>
+                            @endforeach
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for($j = 0;$j < 5;$j++)
+                        <tr>
+                            @foreach($jadwalkonseling["detail"] as $k => $jk)
+                                <td class="" data-status="{{$jk[$j]->bookedby_count > 0 ? "booked" : }}">@if(isset($jk[$j]))
+                                    <div class="row">
+                                        <div class="col">
+                                            Dari
+                                            <input type="time" class="form-control mb-3 bg-info" placeholder="" readonly></div>
+                                        <div class="col">
+                                            Sampai
+                                            <input type="time" class="form-control" readonly></div>
+                                    </div>
+                                     @endif</td>
+                            @endforeach
+                        </tr>
+                        @endfor
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+            </div>
+        </div>
+    </div>
+@endsection
