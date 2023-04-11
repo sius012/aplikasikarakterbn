@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class JadwalKonseling extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create("jadwal_konseling", function(Blueprint $table){
+            $table->id("id_jk");
+            $table->unsignedBigInteger("id_konselor");
+            $table->string("keterangan");
+            $table->integer("minggu");
+            $table->integer("bulan");
+            $table->integer("tahun");
+            $table->enum("status");
+
+            $table->foreign("id_konselor")->references("id")->on("users");
+        });
+
+        Schema::create("JadwalKonseling", function(Blueprint $table){
+            $table->id("id_jk");
+            $table->unsignedBigInteger("id_konselor");
+            $table->string("keterangan");
+            $table->integer("minggu");
+            $table->integer("bulan");
+            $table->integer("tahun");
+
+            $table->foreign("id_konselor")->references("id")->on("users");
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}

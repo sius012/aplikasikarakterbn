@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <style>
 .card{
     padding: 5%;
@@ -43,6 +44,132 @@
     text-align: center;
 }
 
+.overlay h2{
+    font-size: 20px;
+    margin-left: 5px;
+}
+.overlay .fa-image{
+    padding: 50px;
+    color: white;
+    background: rgb(193, 53, 193);
+    font-size: 90px;
+    margin: 0 2.5em auto;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fa-image:hover{
+    background : purple;
+}
+
+.info .lol .tombol_post{
+    width: 97%;
+}
+
+
+.info{
+    overflow-y: sroll;
+}
+
+.overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.8);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 2148;
+}
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+}
+.overlay .info input{
+    margin: 5px 10px auto;
+    width: 90%;
+}
+.overlay .info select{
+    margin-left: 5px;
+    width: 30em;
+}
+.overlay .info label{
+    margin-left: 5px;
+}
+.info .lol{
+    margin: 3% 30% auto;
+    background: #fff;
+    width: 40%;
+    border-radius: 3px;
+    padding: 10px 0;
+    overflow-y: visible;
+}
+.lol button{
+    float: right;
+    margin: 10px;
+}
+a.keluar{
+    float: right;
+    color: black;
+    text-decoration: none;
+}
+.show-hide{
+   position:absolute;
+   right: 3em;
+   top: 66%;
+   transform: translateY(-50%);
+   cursor: pointer;
+}
+
+.file{
+    display: none;
+}
+
+.lanjut{
+    position: absolute;
+    font-size: 70px;
+    margin-top: 4em;
+    margin-left: 14em;
+    color: white;
+    transition: 0.3s;
+}
+
+.detail_foto{
+    height: 200px;
+    margin: 5px 0px 0px 120px;
+    border-radius: 5%;
+}
+
+
+
+
+@media(max-width: 500px) {
+  .info .lol{
+    margin-left: 3em;
+    width: 70%;
+  }
+  .show-hide{
+   position:absolute;
+   right: 2em;
+   top: 66%;
+   transform: translateY(-50%);
+   cursor: pointer;
+}
+
+.overlay .fa-image{
+    margin-left: 0.3em;
+}
+
+.info .lol .tombol_post{
+    width: 90%;
+}
+
+}
+
 
 
 @media (max-width: 1282px) and (max-height: 802px){
@@ -51,6 +178,14 @@
         width: 5%;
         margin-top: 44%;
    }
+
+   .overlay .fa-image{
+    margin-left: 1.8em;
+}
+
+.detail_foto{
+    margin: 5px 0px 0px 120px;
+}
 }
 
 @media (max-width: 1025px){
@@ -59,6 +194,10 @@
         width: 7%;
         margin-top: 40%;
    }
+
+   .overlay .fa-image{
+    margin-left: 1.3em;
+}
 }
 
 @media (max-width: 913px){
@@ -67,6 +206,10 @@
         width: 7%;
         margin-top: 120%;
    }
+
+   .overlay .fa-image{
+    margin-left: 1em;
+}
 }
 
 @media (max-width: 822px){
@@ -75,6 +218,10 @@
         width: 8%;
         margin-top: 110%;
    }
+
+   .overlay .fa-image{
+    margin-left: 0.8em;
+}
 }
 
 @media (max-width: 770px){
@@ -91,6 +238,14 @@
         width: 12%;
         margin-top: 90%;
    }
+
+   .overlay .fa-image{
+    margin-left: 0.1em;
+}
+
+.info .lol .tombol_post{
+    width: 90%;
+}
 }
 
 @media (max-width: 415px){
@@ -99,6 +254,11 @@
         width: 15%;
         margin-top: 160%;
    }
+
+   .overlay .fa-image{
+    margin-left: 0.5em;
+}
+
 }
 
 @media (max-width: 395px){
@@ -115,6 +275,10 @@
         width: 17%;
         margin-top: 120%;
    }
+
+   .overlay .fa-image{
+    margin-left: 0.4em;
+}
 }
 
 @media (max-width: 281px){
@@ -123,42 +287,82 @@
         width: 23%;
         margin-top: 150%;
    }
+
+   .overlay .fa-image{
+    padding: 10px;
+    font-size: 90px;
+    margin-left: 0.4em;
+}
 }
 
 
-
-
 </style>
-    
-    <a href=""><button type="button" class="tambah">+</button></a>
-    
-            <div class="card">
-                <b><img class="profil" src="https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg"> Max (Asrama Putra)</b> 
-                <img class="card-img-top"
-                    src="https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="#modal/id"><i class="fa fa-comment-o"><p class="nomor-comment">1</p></i></a>
-                      <details>
-                    <summary class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</summary>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </details>
-                </div>
+
+
+<div id="tambah" class="overlay">
+        <div class="info">
+            <div class="lol">
+        <form id="upload-form" action="{{route('tambah_laporan')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="id_roles" value="@foreach($datas2 as $d) {{$d->role_id}}@endforeach">
+        <input type="hidden" name="id_pengguna" value="@foreach($datas2 as $d) {{$d->model_id}}@endforeach">
+        <h2>Post Gambar Anda<a href="#" class="keluar">&times</a></h2>
+        <hr style="border: 1px solid black;margin-top: -3px;">
+
+             <label for="file-input">
+            
+                 <i class="fas fa-image"></i>
+                 <input type="file" id="file-input" class="file" accept="image/*" multiple name="gambar[]">
+             </label>
+        </form>
             </div>
+        </div>
+    </div>
+
+    
+    <a href="#tambah"><button type="button" class="tambah">+</button></a>
+
+   
+
+    @foreach($datas as $i)
+        @php
+            $images = explode('|', $i->gambar);
+        @endphp
+
+        <div class="card">
+            <img class="profil" src="https://wallpaperset.com/w/full/c/b/e/534560.jpg"> <b style="margin-left: 3em;margin-top: -2.3em;">{{$i->pengguna->name}} ({{$i->role->name}})</b><br>
+  <a href="#detail/{{$i->id_laporan}}" class="detail_gambar" post_detail="{{$i->id_laporan}}"><img class="card-img-top" src="{{asset('postingan/'.$images[0])}}" alt="Card image cap"></a>
+  <div class="card-body">
+    <details>
+    <summary class="card-text">{{$i->deskripsi ?? "Tidak Ada Deskripsi"}}</summary>
+    <p>{{$i->deskripsi}} <b>({{$i->nama_siswass ?? 'Tidak Ada Nama'}})</b></p>
+</details>
+  </div>
+</div>
 
 
-             <div class="card">
-                <b><img class="profil" src="https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg"> Delila (Asrama Putri)</b> 
-                <img class="card-img-top"
-                    src="https://img.freepik.com/free-photo/view-snowy-mountain-fir-trees-with-blue-sky-background_9083-8044.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <a href="#modal/id"><i class="fa fa-comment-o"><p class="nomor-comment">1</p></i></a>
-                      <details>
-                    <summary class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</summary>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </details>
-                </div>
+<div id="detail/{{$i->id_laporan}}" class="overlay" style="overflow-y:scroll">
+    <div class="info">
+            <div class="lol" >
+                 <h2>Detail Post Laporan<a href="#" class="keluar">&times</a></h2>
+                 @foreach($images as $img)
+                 <img class="detail_foto" src="{{asset('postingan/'.$img)}}" id="detail_foto">
+                 @endforeach
             </div>
+        </div>
+</div>
+    @endforeach
 
+
+        <script>
+$(function() {
+    $('#file-input').on('change', function() {
+        
+      $('#upload-form').submit();
+      
+    });
+  });
+</script>
 @endsection
+
+

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuperAppController;
+use App\Http\Controllers\AsramaProject;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,24 @@ Route::get('/', function () {
 Route::group(["middleware" => "auth"], function () {
     Route::view('laporan_harian', 'laporan_asrama.laporan_harian');
 
-    Route::view('postingan','laporan_asrama.postingan');
+    Route::get('laporan_harian',[AsramaProject::class,'tampil_laporan_harian'])->name('laporan_harian');
 
-    Route::view('test_saja','testing.mytest');
+    Route::get('detail_foto/{id}',[AsramaProject::class,'detail_foto']);
+
+    Route::get('kembali/{id}',[AsramaProject::class,'kembali_home']);
+    
+    Route::get('postingan/{id_saja}',[AsramaProject::class,'lihat_post'])->name("asrama.laporanharian");
+
+    Route::post('tambah_laporan', [AsramaProject::class, 'tambah_laporan'])->name('tambah_laporan');
+
+    Route::put('tambah_siswa',[AsramaProject::class,'tambah_siswa']);
+    
+    Route::view('postingan', 'laporan_asrama.postingan');
+
+
+    Route::view('test_saja', 'testing.mytest');
+
+
     Route::get('/dashboard', [SuperAppController::class, "dashboard"])->name("dashboard");
 
     Route::get('/datasiswa', [SuperAppController::class, "datasiswa"])->name('datasiswa');
@@ -59,9 +75,9 @@ Route::group(["middleware" => "auth"], function () {
 
     Route::get('/konfigurasiumum', [SuperAppController::class, "konfigurasiumum"])->name("admin.konfigurasiumum");
 
-     Route::get('/datasiswa', [SuperAppController::class, "datasiswa"])->name('datasiswa');
+    Route::get('/datasiswa', [SuperAppController::class, "datasiswa"])->name('datasiswa');
 
-     Route::get('/carisiswa', [SuperAppController::class, "carisiswa"])->name('carisiswa');
+    Route::get('/carisiswa', [SuperAppController::class, "carisiswa"])->name('carisiswa');
 
     Route::get('/konfigurasiumum/jurusan', [SuperAppController::class, "konfigurasijurusan"])->name("admin.konfigurasiumum.jurusan");
     Route::post('/konfigurasiumum/jurusan/tambah', [SuperAppController::class, "tambahjurusan"])->name("admin.konfigurasiumum.jurusan.tambah");
@@ -82,27 +98,31 @@ Route::group(["middleware" => "auth"], function () {
     //Route Home
     Route::get('/beranda', [SuperAppController::class, "beranda"])->name("beranda");
     Route::get('/listsiswa', [SuperAppController::class, "listsiswa"])->name("listsiswa");
-    
+
     //Konseling
-    Route::get('/reservasikonseling', [SuperAppController::class,"reservasikonseling"])->name("bk.reservasikonseling");
-    Route::put('/tolakreservasi', [SuperAppController::class,"tolakreservasi"])->name("bk.tolakreservasi");
-    Route::put('/tanggapireservasi', [SuperAppController::class,"tanggapireservasi"])->name("bk.tanggapireservasi");
-    Route::put('/ubahjadwalreservasi', [SuperAppController::class,"ubahreservasi"])->name("bk.ubahjadwalreservasi");
+    Route::get('/reservasikonseling', [SuperAppController::class, "reservasikonseling"])->name("bk.reservasikonseling");
+    Route::put('/tolakreservasi', [SuperAppController::class, "tolakreservasi"])->name("bk.tolakreservasi");
+    Route::put('/tanggapireservasi', [SuperAppController::class, "tanggapireservasi"])->name("bk.tanggapireservasi");
+    Route::put('/ubahjadwalreservasi', [SuperAppController::class, "ubahreservasi"])->name("bk.ubahjadwalreservasi");
+
+
+    Route::get("/profil", [SuperAppController::class, "profil"])->name("profil");
+    Route::post("/profil/storejadwal", [SuperAppController::class, "storejadwal"])->name("profil.storejadwal");
+    Route::get("/profil/lihatjadwal/{id}", [SuperAppController::class, "lihatjadwal"])->name("profil.lihatjadwal");
 });
 
 Route::get('/injectsiswa', [SuperAppController::class, "injectsiswa"]);
 
 //Siswa 
 Route::middleware("auth:siswa")->group(function () {
-    Route::get('/siswa/register', [SuperAppController::class, "registersiswa"])->name("siswa.register");
-    Route::post('/siswa/register', [SuperAppController::class, "registersiswastore"])->name("siswa.register.store");
-
     Route::get('/pengajuankonseling', [SuperAppController::class, "pengajuankonseling"])->name("siswa.pengajuankonseling");
     Route::get('/pengajuankonseling/carikonselor', [SuperAppController::class, "carikonselor"])->name("siswa.carikonselor");
     Route::post('/pengajuankonseling/store', [SuperAppController::class, "pengajuankonselingstore"])->name("siswa.pengajuankonseling.store");
 
-    Route::get('/riwayatkonseling', [SuperAppController::class,"riwayatkonseling"])->name("siswa.riwayatkonseling");
+    Route::get('/riwayatkonseling', [SuperAppController::class, "riwayatkonseling"])->name("siswa.riwayatkonseling");
 });
+Route::get('/siswa/register', [SuperAppController::class, "registersiswa"])->name("siswa.register");
+Route::post('/siswa/register', [SuperAppController::class, "registersiswastore"])->name("siswa.register.store");
 
 Route::get('/siswa/login', [SuperAppController::class, "loginsiswa"])->name("siswa.login");
 Route::post('/siswa/login', [SuperAppController::class, "loginsiswaattempt"])->name("siswa.login.attempt");
