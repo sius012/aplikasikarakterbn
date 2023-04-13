@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.3.0",
+        "bootstrap-icons": "^1.10.4",
         "chart.js": "^4.2.1",
         "datatables": "^1.10.18",
         "datatables.net": "^1.13.4",
@@ -39,8 +40,12 @@
         "jszip": "^3.10.1",
         "laravel-echo": "^1.15.0",
         "pdfmake": "^0.2.7",
+        "popper": "^1.0.1",
         "pusher-js": "^8.0.2",
+        "sheetjs": "^1.0.21",
         "sweetalert2": "^11.7.3",
-        "webpack-cli": "^5.0.1"
+        "webpack-cli": "^5.0.1",
+        "xlsx": "file:vendor/xlsx-0.19.2.tgz",
+        "xlsx-js-style": "^1.2.0"
     }
 }
