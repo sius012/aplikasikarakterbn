@@ -1,0 +1,50 @@
+.card-kelas{
+    height: 20rem;
+    text-align: center;
+}
+
+
+.kelas-10{
+    background-color: rgb(128, 0, 255);
+    color: white
+}
+
+
+.custom-tooltip {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 3;
+    width: 200px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+}
+
+
+
+
+.red {
+    background: red;
+}
+
+.row-tooltip < div {
+    display: inline;
+}
+
+.list-siswa {
+    min-width: 100px;
+    padding: 10px;
+}
+
+.list-siswa .row{
+    padding: 30px;
+}
+
+.booked{
+    border: 2px solid rgb(85, 219, 2);
+}
