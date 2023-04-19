@@ -997,17 +997,17 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.1",
-            "version_normalized": "2.15.1.0",
+            "version": "2.15.2",
+            "version_normalized": "2.15.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "e864ac957acd66e1565f25efda61e37791a5db0b"
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/e864ac957acd66e1565f25efda61e37791a5db0b",
-                "reference": "e864ac957acd66e1565f25efda61e37791a5db0b",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1023,7 @@
                 "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
                 "whoops/soap": "Formats errors as SOAP responses"
             },
-            "time": "2023-03-06T18:09:13+00:00",
+            "time": "2023-04-12T12:00:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1059,7 +1059,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.1"
+                "source": "https://github.com/filp/whoops/tree/2.15.2"
             },
             "funding": [
                 {
@@ -1277,23 +1277,23 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.5.0",
-            "version_normalized": "7.5.0.0",
+            "version": "7.5.1",
+            "version_normalized": "7.5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b50a2a1251152e43f6a37f0fa053e730a67d25ba"
+                "reference": "b964ca597e86b752cd994f27293e9fa6b6a95ed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b50a2a1251152e43f6a37f0fa053e730a67d25ba",
-                "reference": "b50a2a1251152e43f6a37f0fa053e730a67d25ba",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b964ca597e86b752cd994f27293e9fa6b6a95ed9",
+                "reference": "b964ca597e86b752cd994f27293e9fa6b6a95ed9",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.5",
-                "guzzlehttp/psr7": "^1.9 || ^2.4",
+                "guzzlehttp/psr7": "^1.9.1 || ^2.4.5",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.2 || ^3.0"
@@ -1313,7 +1313,7 @@
                 "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
-            "time": "2022-08-28T15:39:27+00:00",
+            "time": "2023-04-17T16:30:08+00:00",
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -1388,7 +1388,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.5.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.5.1"
             },
             "funding": [
                 {
@@ -1495,23 +1495,23 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.4.4",
-            "version_normalized": "2.4.4.0",
+            "version": "2.5.0",
+            "version_normalized": "2.5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf"
+                "reference": "b635f279edd83fc275f822a1188157ffea568ff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf",
-                "reference": "3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/b635f279edd83fc275f822a1188157ffea568ff6",
+                "reference": "b635f279edd83fc275f822a1188157ffea568ff6",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0",
                 "ralouphie/getallheaders": "^3.0"
             },
             "provide": {
@@ -1526,15 +1526,12 @@
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
             },
-            "time": "2023-03-09T13:19:02+00:00",
+            "time": "2023-04-17T16:11:26+00:00",
             "type": "library",
             "extra": {
                 "bamarni-bin": {
                     "bin-links": true,
                     "forward-command": false
-                },
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
                 }
             },
             "installation-source": "dist",
@@ -1597,7 +1594,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.4.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.5.0"
             },
             "funding": [
                 {
@@ -4381,17 +4378,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.6",
-            "version_normalized": "9.6.6.0",
+            "version": "9.6.7",
+            "version_normalized": "9.6.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b65d59a059d3004a040c16a82e07bbdf6cfdd115"
+                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b65d59a059d3004a040c16a82e07bbdf6cfdd115",
-                "reference": "b65d59a059d3004a040c16a82e07bbdf6cfdd115",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
+                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
                 "shasum": ""
             },
             "require": {
@@ -4427,7 +4424,7 @@
                 "ext-soap": "To be able to generate mocks based on WSDL files",
                 "ext-xdebug": "PHP extension that provides line coverage as well as branch and path coverage"
             },
-            "time": "2023-03-27T11:43:46+00:00",
+            "time": "2023-04-14T08:58:40+00:00",
             "bin": [
                 "phpunit"
             ],
@@ -4467,7 +4464,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.7"
             },
             "funding": [
                 {
@@ -6356,17 +6353,17 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "5.10.0",
-            "version_normalized": "5.10.0.0",
+            "version": "5.10.1",
+            "version_normalized": "5.10.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc"
+                "reference": "d08b3ffc5870cce4a47a39f22174947b33c191ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
-                "reference": "5d0a703ece4636e6bde98eb85ac72b40aa6e42bc",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/d08b3ffc5870cce4a47a39f22174947b33c191ae",
+                "reference": "d08b3ffc5870cce4a47a39f22174947b33c191ae",
                 "shasum": ""
             },
             "require": {
@@ -6381,7 +6378,7 @@
                 "phpunit/phpunit": "^9.4",
                 "predis/predis": "^1.1"
             },
-            "time": "2023-03-22T02:57:36+00:00",
+            "time": "2023-04-12T17:08:32+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6429,7 +6426,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/5.10.0"
+                "source": "https://github.com/spatie/laravel-permission/tree/5.10.1"
             },
             "funding": [
                 {
