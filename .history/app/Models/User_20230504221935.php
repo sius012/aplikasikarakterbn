@@ -1,0 +1,99 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasFactory, Notifiable, hasRoles;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'photo'
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+    
+
+    public $timestamps = false;
+
+    /**
+     * The attributes that appends to returned entities.
+     *
+     * @var array
+     */
+  
+
+    /**
+     * The getter that return accessible URL for user photo.
+     *
+     * @var array
+     */
+    public function getPhotoAttribute()
+    {
+        // if ($this->foto !== null) {
+        //     return url('media/user/' . $this->id . '/' . $this->foto);
+        // } else {
+        //     return url('media-example/no-image.png');
+        // }
+    }
+
+    public function GetMyListClass(){
+        //mendapatkan hak akses
+        $hakAkses = TeacherHasTeaching::where("id_guru", $this->id)->where("dari","<", date("Y-m-d"))->where("sampai","<", date("Y-m-d"))->get();
+        $semua = false;
+        //jika ada hak akses
+        if($hakAkses->count() > 0){
+            //
+            $angkatan = [];
+            foreach ($hakAkses as $i => $ha) {
+                if($ha->id_angkatan!="semua"){
+                    array_push($angkatan, explode(",",$ha->id_angkatan));
+                }else{
+                    $semua = true;
+                }
+            }
+
+            if(!$semua){
+
+            }else{
+                $merged_array = call_user_func_array('array_merge', $angkatan);
+                $unique_array = array_unique($merged_array);
+            }
+        }
+    
+    }
+  
+
+    
+
+}
